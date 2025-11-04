@@ -1,23 +1,16 @@
 import { Link } from "react-router";
-
+import LogImg from "../assets/logo_2.png"
 export function Header() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-black text-white font-bold">
-            AI
-          </span>
-          <div>
-            <h1 className="text-lg font-semibold leading-tight">
-              Fabric Defect Detection Dashboard
-            </h1>
+        <Link to={"/"} className="flex items-center gap-3">
+          <div className="w-12 h-12">
+            <img src={LogImg} className="w-full h-full object-cover" alt="" />
           </div>
-        </div>
-        <Link
-          to="/documentation"
-          className="text-sm text-gray-600 hover:text-gray-900 underline decoration-dotted"
-        >
+            <h3 className="">Fabric Dashboard</h3>
+        </Link>
+        <Link to="/documentation" className="btn btn-primary">
           Document
         </Link>
       </div>

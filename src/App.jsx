@@ -1,10 +1,9 @@
 // src/App.jsx
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { UploadZone } from "./Component/UploadZone";
 import { Header } from "./Component/Header";
 import { Stat } from "./Component/Stat";
 import { ResultCard } from "./Component/ResultCard";
-import { HistoryList } from "./Component/HistoryList";
 import { Footer } from "./Component/Footer";
 
 // ⬇️ Backend base URL
@@ -172,35 +171,6 @@ export default function App() {
             </div>
           </section>
         )}
-
-        {/* History */}
-        <section>
-          <HistoryList
-            items={history}
-            onSelect={(it) => {
-              setFile(it.file);
-              setFileUrl(it.previewUrl);
-              setResult(it.result);
-            }}
-            onClear={() => setHistory([])}
-          />
-        </section>
-
-        {/* Quick notes */}
-        <section className="p-4 rounded-2xl border bg-white">
-          <div className="text-sm font-medium mb-2">Integration Notes</div>
-          <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
-            <li>
-              The backend <code>/predict</code> endpoint should accept <code>multipart/form-data</code> containing a{" "}
-              <code>file</code> input.
-            </li>
-            <li>Enable CORS for cross-origin access (e.g., FastAPI CORSMiddleware or Flask-CORS).</li>
-            <li>
-              If the heatmap URL is relative, the frontend automatically resolves it as <code>API_URL + heatmap_url</code>.
-            </li>
-            <li>Proper error handling is implemented; the response can be debugged inside a pre block.</li>
-          </ul>
-        </section>
       </main>
 
       <Footer />
