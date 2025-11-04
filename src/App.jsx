@@ -30,7 +30,7 @@ export default function App() {
     setLoading(false);
   }, []);
 
-  // ✅ File handler (binary + preview + validation)
+  // File handler (binary + preview + validation)
   const handleFile = useCallback((f) => {
     if (!f) return;
 
@@ -42,11 +42,11 @@ export default function App() {
     setError("");
     setFile(f);
 
-    // Preview তৈরি করা
+    // Preview 
     const url = URL.createObjectURL(f);
     setFileUrl(url);
 
-    // Base64 binary তে convert করা (optional)
+    // Base64 binary 
     const reader = new FileReader();
     reader.onloadend = () => {
       const base64Data = reader.result.split(",")[1];
@@ -55,7 +55,7 @@ export default function App() {
     reader.readAsDataURL(f);
   }, []);
 
-  // ✅ Prediction Call
+  // Prediction Call
   const callPredict = async () => {
     if (!file) {
       setError("No file selected!");
@@ -67,7 +67,7 @@ export default function App() {
       setError("");
 
       const form = new FormData();
-      form.append("file", file); // এখানে file object যাচ্ছে (not base64)
+      form.append("file", file); 
 
       const res = await fetch(`${API_URL}/predict`, {
         method: "POST",
@@ -111,7 +111,7 @@ export default function App() {
     <div className="min-h-dvh bg-gradient-to-b from-white to-gray-50 text-gray-900">
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">
+      <main className="max-w-6xl min-h-[70vh] mx-auto px-4 py-6 space-y-6">
         {/* Top stats */}
         <section className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Stat label="Status" value={loading ? "Processing..." : result ? "Ready" : "Uninitialized"} />
