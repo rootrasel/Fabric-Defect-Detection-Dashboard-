@@ -289,7 +289,7 @@ const Documentation = () => {
             </a>
 
             <a
-              href="https://www.youtube.com/@raselsarker69"
+              href="https://www.youtube.com/@rootsofintelligence"
               className="hover:opacity-80"
               target="_blank"
               rel="noopener noreferrer"
