@@ -10,7 +10,7 @@ const Documentation = () => {
       <div className="min-h-[calc(100vh-4rem)] max-w-6xl mx-auto px-6 py-16">
         {/* Page Title */}
         <h1 className="text-4xl font-extrabold text-center mb-12 border-b pb-4">
-          Fabric Defect Detection – Documentation
+          🧵 Fabric Defect Detection – Documentation
         </h1>
 
         {/* Section 1: Model Description */}
@@ -86,7 +86,7 @@ const Documentation = () => {
           </p>
           <ul className="list-disc list-inside mt-4 space-y-3 text-lg pl-4">
             <li>Pre-trained model: yolov8m.pt</li>
-            <li>Epochs: 100</li>
+            <li>Epochs: 50</li>
             <li>Image size: 960 × 960</li>
             <li>Batch size: 8</li>
             <li>Device: GPU (device=0)</li>
@@ -138,16 +138,38 @@ const Documentation = () => {
           </div>
 
           <div className="rounded-lg border p-6 mb-6">
-            <h3 className="text-xl font-semibold mb-4">Class Info</h3>
-            <ul className="list-disc list-inside text-lg space-y-3 pl-4">
-              <li>
-                <strong>Defective</strong> — Images containing annotated defects.
-              </li>
-              <li>
-                <strong>Non-Defective</strong> — Images without bounding boxes.
-              </li>
-            </ul>
+            <h3 className="text-xl font-semibold mb-4">Class Information</h3>
+            <div className="text-lg space-y-3">
+              <div className="font-medium mb-2">Defect Categories:</div>
+              <ul className="list-disc list-inside space-y-2 pl-4">
+                <li>
+                  <strong>Hole</strong> — Represents visible holes or torn areas in the fabric.
+                </li>
+                <li>
+                  <strong>Knot</strong> — Indicates thread knots or yarn entanglements.
+                </li>
+                <li>
+                  <strong>Line</strong> — Refers to unwanted weaving lines or irregular textures.
+                </li>
+                <li>
+                  <strong>Stain</strong> — Denotes discolorations or surface stains on the fabric.
+                </li>
+              </ul>
+
+              <div className="font-medium mt-4 mb-2">Classification Outcome:</div>
+              <ul className="list-disc list-inside space-y-2 pl-4">
+                <li>
+                  <strong>Defective</strong> — The fabric is labeled <em>Defective</em> if
+                  any of the above defect classes (Hole, Knot, Line, or Stain) are detected.
+                </li>
+                <li>
+                  <strong>Non-Defective</strong> — The fabric is labeled <em>Non-Defective</em> 
+                  if no defects are detected.
+                </li>
+              </ul>
+            </div>
           </div>
+
 
           <div className="rounded-lg border p-6 mb-6">
             <h3 className="text-xl font-semibold mb-4">Annotation Format</h3>
@@ -190,8 +212,121 @@ const Documentation = () => {
             </ul>
           </div>
         </section>
-      </div>
 
+        {/* Author Section */}
+        <section className="mt-12 border-t pt-8">
+          <h2 className="text-2xl font-semibold mb-4">Author : Md. Rasel Sarker</h2>
+
+          <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
+            <img
+              src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif"
+              alt="connect"
+              width={30}
+              className="inline-block"
+            />
+            🌐 Connect with Me
+          </h3>
+
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <a
+              href="mailto:rasel.sarker6933@gmail.com"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/Email-rasel.sarker6933@gmail.com-blue?style=flat-square&logo=gmail"
+                alt="Email"
+              />
+            </a>
+
+            <a
+              href="https://github.com/rootrasel"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/GitHub-%40Raselsarker-lightgrey?style=flat-square&logo=github"
+                alt="GitHub"
+              />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/rasel-sarker-405160227/"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/LinkedIn-Rasel%20Sarker-blue?style=flat-square&logo=linkedin"
+                alt="LinkedIn"
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/mdrasel.sarker.7773631"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/Facebook-%40Raselsarker-blue?style=flat-square&logo=facebook"
+                alt="Facebook"
+              />
+            </a>
+
+            <a
+              href="https://www.kaggle.com/mdraselsarker"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/Kaggle-%40Raselsarker-blue?style=flat-square&logo=kaggle"
+                alt="Kaggle"
+              />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@raselsarker69"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/YouTube-Rasel%20Sarker-red?style=flat-square&logo=youtube"
+                alt="YouTube"
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/groups/832585175685301"
+              className="hover:opacity-80"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://img.shields.io/badge/Facebook%20Group-Rasel%20Sarker%20Group-blue?style=flat-square&logo=facebook"
+                alt="Facebook Group"
+              />
+            </a>
+
+            <img
+              src="https://img.shields.io/badge/Phone-%2B8801581528651-green?style=flat-square&logo=whatsapp"
+              alt="Phone"
+            />
+          </div>
+
+          <hr className="my-8" />
+
+          <div className="text-center space-y-3">
+            <p>Thank you for visiting</p>
+            <p>Happy coding! 🚀</p>
+          </div>
+        </section>
+
+      </div>
       <Footer />
     </div>
   );
