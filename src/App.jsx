@@ -7,7 +7,7 @@ import { ResultCard } from "./Component/ResultCard";
 import { Footer } from "./Component/Footer";
 
 // ⬇️ Backend base URL
-const API_URL ="http://127.0.0.1:8000";
+const API_URL = "http://127.0.0.1:8000";
 
 const cx = (...cls) => cls.filter(Boolean).join(" ");
 const percent = (p) => `${Math.round((Number(p) || 0) * 100)}%`;
@@ -20,7 +20,7 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [history, setHistory] = useState([]);
   const [binaryData, setBinaryData] = useState(null);
-  console.log(binaryData)
+  console.log(binaryData);
 
   const reset = useCallback(() => {
     setFile(null);
@@ -67,7 +67,7 @@ export default function App() {
       setError("");
 
       const form = new FormData();
-      form.append("file", file); 
+      form.append("file", file);
 
       const res = await fetch(`${API_URL}/predict`, {
         method: "POST",
@@ -108,7 +108,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-dvh text-gray-900">
+    <div className="min-h-dvh">
       <Header />
 
       <main className="max-w-6xl min-h-[70vh] mx-auto px-4 py-6 space-y-6">
@@ -124,7 +124,7 @@ export default function App() {
         <section className="space-y-4">
           <UploadZone onFile={handleFile} callPredict={callPredict} />
           {error && (
-            <div className="text-sm text-rose-700 bg-rose-50 border border-rose-200 p-3 rounded-xl">
+            <div className="text-sm border p-3 rounded-xl">
               ⚠️ {error}
             </div>
           )}
@@ -133,7 +133,7 @@ export default function App() {
         {file && (
           <section className="space-y-4">
             <div className="flex items-center justify-between">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm">
                 Choose file: <span className="font-medium">{file.name}</span>
               </div>
               <div className="flex items-center gap-2">
@@ -142,13 +142,13 @@ export default function App() {
                   disabled={loading}
                   className={cx(
                     "px-3 py-1.5 rounded-xl text-sm border",
-                    loading ? "bg-gray-100 text-gray-400" : "bg-white hover:bg-gray-50"
+                    loading ? "opacity-50 cursor-not-allowed" : "hover:opacity-80"
                   )}
                 >
                   Re-predict
                 </button>
                 <button
-                  className="px-3 py-1.5 rounded-xl text-sm bg-gray-900 text-white hover:opacity-90"
+                  className="px-3 py-1.5 rounded-xl text-sm border hover:opacity-80"
                   onClick={reset}
                 >
                   Reset
@@ -156,16 +156,16 @@ export default function App() {
               </div>
             </div>
 
-            <div className={cx("rounded-3xl border p-4 bg-white", loading && "opacity-70 pointer-events-none")}>
-              {loading && <div className="mb-3 text-sm text-gray-600">Predicting... Please wait.</div>}
+            <div className={cx("rounded-3xl border p-4", loading && "opacity-70 pointer-events-none")}>
+              {loading && <div className="mb-3 text-sm">Predicting... Please wait.</div>}
               {result ? (
                 <ResultCard result={result} fileUrl={fileUrl} onClear={reset} />
               ) : (
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                  <div className="rounded-2xl border bg-gray-50 aspect-video flex items-center justify-center text-gray-400">
+                  <div className="rounded-2xl border aspect-video flex items-center justify-center">
                     Image Preview
                   </div>
-                  <div className="rounded-2xl border bg-gray-50 h-48"></div>
+                  <div className="rounded-2xl border h-48"></div>
                 </div>
               )}
             </div>

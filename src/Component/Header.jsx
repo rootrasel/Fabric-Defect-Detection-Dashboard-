@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import LogImg from "../assets/logo_2.png"
+import LogImg from "../assets/logo_2.png";
 import ThemeToggle from "./ThemeToggle";
 export function Header() {
   return (
@@ -9,12 +9,18 @@ export function Header() {
           <div className="w-12 h-12">
             <img src={LogImg} className="w-full h-full object-cover" alt="" />
           </div>
-            <h3 className="">Fabric Dashboard</h3>
+          <h3 className="">Fabric Dashboard</h3>
         </Link>
-        <Link to="/documentation" className="btn btn-primary">
-          Document
-        </Link>
-        <ThemeToggle />
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <Link
+            to="/documentation"
+            className="px-4 py-[6px] bg-primary text-white rounded-4xl hover:opacity-90 transition-opacity duration-200 mr-4"
+          >
+            Document
+          </Link>
+          
+        </div>
       </div>
     </header>
   );
