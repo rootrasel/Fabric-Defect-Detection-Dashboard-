@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import LogImg from "../assets/logo_2.png"
+import ThemeToggle from "./ThemeToggle";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b">
@@ -13,6 +14,7 @@ export function Header() {
         <Link to="/documentation" className="btn btn-primary">
           Document
         </Link>
+        <ThemeToggle />
       </div>
     </header>
   );

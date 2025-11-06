@@ -108,7 +108,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-dvh bg-gradient-to-b from-white to-gray-50 text-gray-900">
+    <div className="min-h-dvh text-gray-900">
       <Header />
 
       <main className="max-w-6xl min-h-[70vh] mx-auto px-4 py-6 space-y-6">
